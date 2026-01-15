@@ -1,1 +1,1 @@
-COSC 310
+Nathan Pugh's repository for COSC 310, Advanced Programming Concepts (Java) at Samford University.
