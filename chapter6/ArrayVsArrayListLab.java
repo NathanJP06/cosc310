@@ -34,7 +34,7 @@ public class ArrayVsArrayListLab {
             indicies[i] = r.nextInt(arr.length);
         }
 
-        // Benchmarking random access for array
+        // Declaration and Initialization
         long start = System.nanoTime();
         int result = 0;
         long end = System.nanoTime();
@@ -49,7 +49,7 @@ public class ArrayVsArrayListLab {
         System.out.println(result);
         System.out.println("Array: " + duration + " ns");
 
-        //listRandomAccess
+        // listRandomAccess
         start = System.nanoTime();
         result = listRandomAccess(indicies, list);
         end = System.nanoTime();
