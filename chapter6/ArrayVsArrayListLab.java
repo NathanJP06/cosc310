@@ -36,34 +36,29 @@ public class ArrayVsArrayListLab {
             indicies[i] = r.nextInt(arr.length);
         }
 
-        // Declaration and Initialization
-        long start = System.nanoTime();
-        int result = 0;
-        long end = System.nanoTime();
-        long duration = end - start;
-        System.out.println(result);
-        System.out.println("Empty run: " + duration + " ns");
-
         PrintWriter fileOut = new PrintWriter(new File("results.csv"));
         for (int i = 0; i < 5; i++) {
             // arrayRandomAccess
-            start = System.nanoTime();
-            result = arrayRandomAccess(indicies, arr);
-            end = System.nanoTime();
-            duration = end - start;
+            long start = System.nanoTime();
+            int result = arrayRandomAccess(indicies, arr);
+            long end = System.nanoTime();
+            long duration = end - start;
             System.out.println(result);
             System.out.println("Array: " + duration + " ns");
-            fileOut.printf("array,random_access,%d,%.2f,%d", i, duration / 1_000.0, result);
+            fileOut.printf("array,random_access,%d,%.2f,%d\n", i+1, duration / 1_000.0, result);
+        }
 
+        for (int i = 0; i < 5; i++) {
             // listRandomAccess
-            start = System.nanoTime();
-            result = listRandomAccess(indicies, list);
-            end = System.nanoTime();
-            duration = end - start;
+            long start = System.nanoTime();
+            int result = listRandomAccess(indicies, list);
+            long end = System.nanoTime();
+            long duration = end - start;
             System.out.println(result);
             System.out.println("DataLoader.loadArrayList: " + duration + " ns");
-            fileOut.printf("arraylist,random_access,%d,%.2f,%d", i, duration / 1_000.0, result);
+            fileOut.printf("arraylist,random_access,%d,%.2f,%d\n", i+1, duration / 1_000.0, result);
         }   
+
         fileOut.close();
     }
     
