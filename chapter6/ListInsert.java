@@ -10,10 +10,6 @@ public class ListInsert extends Target{
     @Override
     public int method(int indiciesOrNums[]){
         int result = 0;
-        
-            //list.remove(0);
-            //result++;
-
         return result;
     }
 

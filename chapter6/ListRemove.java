@@ -10,7 +10,7 @@ public class ListRemove extends Target {
     @Override
     public int method(int indiciesOrNums[]){
         int result = 0;
-        for (int i = 20_000; i < indiciesOrNums.length; i++) {
+        for (int i = 0; i < 20_000; i++) {
             list.remove(0);
             result++;
         }
