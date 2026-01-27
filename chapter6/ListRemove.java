@@ -2,7 +2,7 @@ package chapter6;
 
 import java.util.ArrayList;
 
-public class ListRemove extends Target{
+public class ListRemove extends Target {
     public ListRemove(int arr[], ArrayList<Integer> list, String name){
         super(arr, list, name);
     }
@@ -10,11 +10,11 @@ public class ListRemove extends Target{
     @Override
     public int method(int indiciesOrNums[]){
         int result = 0;
-        
-            //list.remove(0);
-            //result++;
-
+        for (int i = 20_000; i < indiciesOrNums.length; i++) {
+            list.remove(0);
+            result++;
+        }
         return result;
-    }
 
+    }
 }
