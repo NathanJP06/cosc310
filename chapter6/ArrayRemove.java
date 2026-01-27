@@ -13,7 +13,7 @@ public class ArrayRemove extends Target {
         int result = 0;
         int smallerArr[] = new int[arr.length - 20_000];
 
-        for (int i = 0; i < indiciesOrNums.length; i++) {
+        for (int i = 20_000; i < indiciesOrNums.length; i++) {
             smallerArr[i-20_000] = arr[i];
             result++;
         }
