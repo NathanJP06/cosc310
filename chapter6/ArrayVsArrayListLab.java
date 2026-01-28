@@ -46,27 +46,27 @@ public class ArrayVsArrayListLab {
         }
 
         if (testAverages[0] < testAverages[1]){
-            System.out.println("Operation: random_access" + "Array Avg: " + testAverages[0] + "ArrayList Avg: " + testAverages[1] + "Winner: Array");
+            System.out.println("Operation: random_access" + " Array Avg: " + testAverages[0] + " ArrayList Avg: " + testAverages[1] + " Winner: Array");
         } else {
-            System.out.println("Operation: random_access" + "Array Avg: " + testAverages[0] + "ArrayList Avg: " + testAverages[1] + "Winner: ArrayList");
+            System.out.println("Operation: random_access" + " Array Avg: " + testAverages[0] + " ArrayList Avg: " + testAverages[1] + " Winner: ArrayList");
         }
 
         if (testAverages[2] < testAverages[3]){
-            System.out.println("Operation: append" + "Array Avg: " + testAverages[2] + "ArrayList Avg: " + testAverages[3] + "Winner: Array");
+            System.out.println("Operation: append" + " Array Avg: " + testAverages[2] + " ArrayList Avg: " + testAverages[3] + " Winner: Array");
         } else {
-            System.out.println("Operation: append" + "Array Avg: " + testAverages[2] + "ArrayList Avg: " + testAverages[3] + "Winner: ArrayList");
+            System.out.println("Operation: append" + " Array Avg: " + testAverages[2] + " ArrayList Avg: " + testAverages[3] + " Winner: ArrayList");
         }
 
         if (testAverages[4] < testAverages[5]){
-            System.out.println("Operation: insert" + "Array Avg: " + testAverages[4] + "ArrayList Avg: " + testAverages[5] + "Winner: Array");
+            System.out.println("Operation: insert" + " Array Avg: " + testAverages[4] + " ArrayList Avg: " + testAverages[5] + " Winner: Array");
         } else {
-            System.out.println("Operation: insert" + "Array Avg: " + testAverages[4] + "ArrayList Avg: " + testAverages[5] + "Winner: ArrayList");
+            System.out.println("Operation: insert" + " Array Avg: " + testAverages[4] + " ArrayList Avg: " + testAverages[5] + " Winner: ArrayList");
         }
 
         if (testAverages[6] < testAverages[7]){
-            System.out.println("Operation: remove" + "Array Avg: " + testAverages[6] + "ArrayList Avg: " + testAverages[7] + "Winner: Array");
+            System.out.println("Operation: remove" + " Array Avg: " + testAverages[6] + " ArrayList Avg: " + testAverages[7] + " Winner: Array");
         } else {
-            System.out.println("Operation: remove" + "Array Avg: " + testAverages[6] + "ArrayList Avg: " + testAverages[7] + "Winner: ArrayList");
+            System.out.println("Operation: remove" + " Array Avg: " + testAverages[6] + " ArrayList Avg: " + testAverages[7] + " Winner: ArrayList");
         }
 
         fileOut.close();
