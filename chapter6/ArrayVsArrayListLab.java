@@ -46,27 +46,27 @@ public class ArrayVsArrayListLab {
         }
 
         if (testAverages[0] < testAverages[1]){
-            System.out.println("Array random access was faster than ArrayList random access");
+            System.out.println("Operation: random_access" + "Array Avg: " + testAverages[0] + "ArrayList Avg: " + testAverages[1] + "Winner: Array");
         } else {
-            System.out.println("ArrayList random access was faster than Array random access");
+            System.out.println("Operation: random_access" + "Array Avg: " + testAverages[0] + "ArrayList Avg: " + testAverages[1] + "Winner: ArrayList");
         }
 
         if (testAverages[2] < testAverages[3]){
-            System.out.println("Array append was faster than ArrayList append");
+            System.out.println("Operation: append" + "Array Avg: " + testAverages[2] + "ArrayList Avg: " + testAverages[3] + "Winner: Array");
         } else {
-            System.out.println("ArrayList append was faster than Array append");
+            System.out.println("Operation: append" + "Array Avg: " + testAverages[2] + "ArrayList Avg: " + testAverages[3] + "Winner: ArrayList");
         }
 
         if (testAverages[4] < testAverages[5]){
-            System.out.println("Array insert was faster than ArrayList insert");
+            System.out.println("Operation: insert" + "Array Avg: " + testAverages[4] + "ArrayList Avg: " + testAverages[5] + "Winner: Array");
         } else {
-            System.out.println("ArrayList insert was faster than Array insert");
+            System.out.println("Operation: insert" + "Array Avg: " + testAverages[4] + "ArrayList Avg: " + testAverages[5] + "Winner: ArrayList");
         }
 
         if (testAverages[6] < testAverages[7]){
-            System.out.println("Array remove was faster than ArrayList remove");
+            System.out.println("Operation: remove" + "Array Avg: " + testAverages[6] + "ArrayList Avg: " + testAverages[7] + "Winner: Array");
         } else {
-            System.out.println("ArrayList remove was faster than Array remove");
+            System.out.println("Operation: remove" + "Array Avg: " + testAverages[6] + "ArrayList Avg: " + testAverages[7] + "Winner: ArrayList");
         }
 
         fileOut.close();
