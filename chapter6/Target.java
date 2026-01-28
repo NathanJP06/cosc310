@@ -32,6 +32,7 @@ abstract public class Target {
             long end = System.nanoTime();
             long duration = end - start;
             results[i] = duration;
+            total += duration;
         }
         double avg = total / (double) TRIALS;
         return avg;
