@@ -17,6 +17,7 @@ public class ArrayAppend extends Target {
             result += arr[indiciesOrNums[i]];
             largerArr[arr.length + i] = indiciesOrNums[i];
         }
+        
         return result;
     }
     

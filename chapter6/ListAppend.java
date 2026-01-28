@@ -10,6 +10,12 @@ public class ListAppend extends Target{
     @Override
     public int method(int indiciesOrNums[]){
         int result = 0;
+
+        for(int i = 0; i < indiciesOrNums.length; i++){
+            result += list.get(indiciesOrNums[i]);
+            list.add(indiciesOrNums[i]);
+        }
+        
         return result;
     }
 
