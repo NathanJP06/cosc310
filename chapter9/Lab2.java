@@ -40,12 +40,15 @@ public class Lab2 {
         runQueueTests(queue1, "Array Queue");
 
         Queue<Integer> queue2 = new DLinkedListQueue<>();
-        for (int i=0; i < 20; i++){
+        for (int i=0; i<16; i++) {
             queue2.enqueue(i);
-            int val = queue2.dequeue();
-            System.out.println(val);
-        }    
-
-        
+        }
+        queue2.dequeue();
+        for (int i=16; i<33; i++) {
+            queue2.enqueue(i);
+        }
+        for(int i=0; i<32; i++) {
+            System.out.print(queue2.dequeue() + " ");
+        }
     }
 }

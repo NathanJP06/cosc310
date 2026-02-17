@@ -12,7 +12,6 @@ public class DLinkedListQueue<T> implements Queue<T> {
 
     @Override
     public void enqueue(T item) {
-        // TODO (enqueue at tail)
         list.add(item);
     }
 
