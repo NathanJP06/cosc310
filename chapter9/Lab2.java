@@ -38,5 +38,14 @@ public class Lab2 {
 
         Queue<String> queue1 = new ArrayQueue<>();
         runQueueTests(queue1, "Array Queue");
+
+        Queue<Integer> queue2 = new DLinkedListQueue<>();
+        for (int i=0; i < 20; i++){
+            queue2.enqueue(i);
+            int val = queue2.dequeue();
+            System.out.println(val);
+        }    
+
+        
     }
 }
