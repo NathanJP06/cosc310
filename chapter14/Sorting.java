@@ -1,6 +1,8 @@
 package chapter14;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 public class Sorting {
@@ -57,6 +59,99 @@ public class Sorting {
             for (int j=0; j<list.size()-i-1; j++)
                 if (list.get(j).compareTo(list.get(j+1))>0) 
                     swap(list, j, j+1);
+    }
+
+    public static <T extends Comparable<T>> void quickSort(ArrayList<T> list) {
+        if (list == null || list.size() < 2) {
+            return;
+        }
+        quickSort(list, 0, list.size() - 1);
+    }
+
+    private static <T extends Comparable<T>> void quickSort(ArrayList<T> list, int low, int high) {
+        Deque<int[]> stack = new ArrayDeque<>();
+        stack.push(new int[] { low, high });
+        while (!stack.isEmpty()) {
+            int[] range = stack.pop();
+            int start = range[0];
+            int end = range[1];
+            if (start >= end) {
+                continue;
+            }
+            if (end - start < 16) {
+                insertionSortRange(list, start, end);
+                continue;
+            }
+            int pivotIndex = medianOfThree(list, start, end);
+            swap(list, pivotIndex, end);
+            int partitionIndex = partition(list, start, end);
+            int leftSize = partitionIndex - 1 - start;
+            int rightSize = end - (partitionIndex + 1);
+            if (leftSize > rightSize) {
+                if (leftSize > 0) {
+                    stack.push(new int[] { start, partitionIndex - 1 });
+                }
+                if (rightSize > 0) {
+                    stack.push(new int[] { partitionIndex + 1, end });
+                }
+            } else {
+                if (rightSize > 0) {
+                    stack.push(new int[] { partitionIndex + 1, end });
+                }
+                if (leftSize > 0) {
+                    stack.push(new int[] { start, partitionIndex - 1 });
+                }
+            }
+        }
+    }
+
+    private static <T extends Comparable<T>> int partition(ArrayList<T> list, int low, int high) {
+        T pivot = list.get(high);
+        int i = low - 1;
+        for (int j = low; j < high; j++) {
+            if (list.get(j).compareTo(pivot) <= 0) {
+                i++;
+                swap(list, i, j);
+            }
+        }
+        swap(list, i + 1, high);
+        return i + 1;
+    }
+
+    private static <T extends Comparable<T>> int medianOfThree(ArrayList<T> list, int low, int high) {
+        int mid = low + (high - low) / 2;
+        T a = list.get(low);
+        T b = list.get(mid);
+        T c = list.get(high);
+        if (a.compareTo(b) > 0) {
+            if (a.compareTo(c) < 0) {
+                return low;
+            }
+            if (b.compareTo(c) > 0) {
+                return mid;
+            }
+            return high;
+        } else {
+            if (a.compareTo(c) > 0) {
+                return low;
+            }
+            if (b.compareTo(c) < 0) {
+                return mid;
+            }
+            return high;
+        }
+    }
+
+    private static <T extends Comparable<T>> void insertionSortRange(ArrayList<T> list, int low, int high) {
+        for (int i = low + 1; i <= high; i++) {
+            T next = list.get(i);
+            int j = i - 1;
+            while (j >= low && list.get(j).compareTo(next) > 0) {
+                list.set(j + 1, list.get(j));
+                j--;
+            }
+            list.set(j + 1, next);
+        }
     }
 
     // because this is recursive, it cannot modify the list, it must return a new sorted list

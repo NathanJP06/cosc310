@@ -2,7 +2,6 @@ package chapter14;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import json.BikeDataRecord;
 
 public class Searching {
